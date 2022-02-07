@@ -4,7 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
+/**
+ * BOJ_6603_S2_로또
+ * @author USER
+ * 조합 문제
+ */
 public class BOJ_6603 {
 	static int N;
 	static int[] input, nums;

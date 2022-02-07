@@ -3,6 +3,11 @@ package 완탐;
 import java.util.HashSet;
 import java.util.Scanner;
 
+/**
+ * BOJ_5568_S5_카드놓기
+ * @author USER
+ * 순열 문제
+ */
 public class BOJ_5568 {
 	
 	static int N, K;

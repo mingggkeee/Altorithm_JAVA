@@ -9,6 +9,12 @@ import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
+/**
+ * BOJ_11725_S2_트리의 부모 찾기
+ * @author USER
+ *
+ */
+
 public class BOJ_11725 {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
