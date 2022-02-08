@@ -17,6 +17,7 @@ public class BOJ_2752 {
 		for(int num : nums) {
 			System.out.print(num+" ");
 		}
+		sc.close();
 	}
 
 }

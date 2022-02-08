@@ -27,5 +27,7 @@ public class BOJ_15903{
 			sum += arr1[i];
 		}
 		System.out.println(sum);
+		
+		sc.close();
 	}
 }

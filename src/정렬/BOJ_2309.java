@@ -37,6 +37,8 @@ public class BOJ_2309 {
 			System.out.println(heights[i]);
 		}
 		
+		sc.close();
+		
 	}
 
 }

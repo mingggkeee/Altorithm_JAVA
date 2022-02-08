@@ -30,5 +30,6 @@ public class BOJ_1676 {
         }
          
         System.out.println(Math.min(cnt_of_2, cnt_of_5));
+        sc.close();
     }
 }
