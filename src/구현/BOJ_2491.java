@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 /**
  * BOJ_2491_S3_수열
  * @author mingggkeee
- * 구현?
+ * 구현
  */
 
 public class BOJ_2491 {
