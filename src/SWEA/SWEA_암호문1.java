@@ -27,7 +27,7 @@ public class SWEA_암호문1 {
 				int command = Integer.parseInt(br.readLine()); // 명령어의 개수
 				st = new StringTokenizer(br.readLine());
 				for(int i=0; i<command; i++) {
-					String trash = st.nextToken(); // 삽입 문자
+					st.nextToken(); // 삽입 문자
 					int x = Integer.parseInt(st.nextToken()); // 인덱스
 					int y = Integer.parseInt(st.nextToken()); // 삽입할 숫자
 					for(int j=0; j<y; j++) {
