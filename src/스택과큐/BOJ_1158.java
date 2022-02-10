@@ -1,8 +1,10 @@
 package 스택과큐;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,6 +16,7 @@ public class BOJ_1158 {
 		Queue<Integer> queue = new LinkedList<Integer>();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		int N = Integer.parseInt(st.nextToken());
 		int K = Integer.parseInt(st.nextToken());
 		for(int i=1; i<=N; i++) {
@@ -33,10 +36,16 @@ public class BOJ_1158 {
 			
 		}
 		String answer = list.toString();
-		System.out.print("<");
+		// System.out.print("<");
+		bw.write("<");
 		for(int i=1; i<answer.length()-1; i++) {
-			System.out.print(answer.charAt(i));
+			// System.out.print(answer.charAt(i));
+			bw.write(answer.charAt(i));
 		}
-		System.out.print(">");
+		bw.write(">");
+		// System.out.print(">");
+		bw.flush();
+		bw.close();
+		br.close();
 	}
 }

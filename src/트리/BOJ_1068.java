@@ -25,7 +25,7 @@ public class BOJ_1068 {
 		isVisited = new boolean[N];
 		int root = 0; // 루트는 0번
 		for(int i=0; i<N; i++) {
-			tree[i] = new ArrayList(); // 양 방향 연결을 위한 리스트안의 리스트
+			tree[i] = new ArrayList<Integer>(); // 양 방향 연결을 위한 리스트안의 리스트
 		}
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
