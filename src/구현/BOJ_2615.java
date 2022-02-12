@@ -40,7 +40,6 @@ public class BOJ_2615 {
         int dir[][] = {{0,1},{1,0},{1,1},{1,-1}};
         for(int d=0; d<4; d++){
             if(visit[r][c][d] == false){
-                boolean flag = false;
                 visit[r][c][d] = true;
                 int nr = r;
                 int nc = c;

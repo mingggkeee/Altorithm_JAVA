@@ -30,6 +30,7 @@ public class BOJ_7568 {
 			}
 			System.out.print(count+1+" ");
 		}
+		sc.close();
 
 	}
 
