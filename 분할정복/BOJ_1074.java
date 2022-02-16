@@ -1,4 +1,4 @@
-package 재귀;
+package 분할정복;
 
 import java.util.Scanner;
 
