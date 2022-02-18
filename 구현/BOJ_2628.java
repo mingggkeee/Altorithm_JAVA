@@ -32,7 +32,7 @@ public class BOJ_2628 {
 			if(num==0) {
 				
 			} else {
-				
+			 	
 			}
 		}
 		
