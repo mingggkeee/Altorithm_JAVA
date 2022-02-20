@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 /**
  * BOJ_1012_S2_유기농 배추
  * @author mingggkeee
- *
+ * DFS,BFS
  */
 
 public class BOJ_1012 {
