@@ -16,7 +16,8 @@ public class BOJ_1260 {
 	static int n,m,start;
 	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		
+		  Scanner sc = new Scanner(System.in);
 		  n = sc.nextInt();
 		  m = sc.nextInt();
 		  start = sc.nextInt();
