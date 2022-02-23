@@ -1,7 +1,7 @@
 package DFS와BFS;
 
 /**
- * BOJ_20304_G1_비밀번호 제작
+ * BOJ_20304_P5_비밀번호 제작
  * @author mingggkeee
  * 비트마스킹, BFS
  */

@@ -3,6 +3,11 @@ package 자료구조;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * BOJ_1197_G4_최소 스패닝 트리
+ * @author mingggkeee
+ * 그래프, 크루스칼
+ */
 public class BOJ_1197 {
 	
 	static int V, E;
