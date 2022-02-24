@@ -1,4 +1,4 @@
-package 자료구조;
+package 분리집합;
 
 import java.util.*;
 import java.io.*;

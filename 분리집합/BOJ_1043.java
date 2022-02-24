@@ -1,4 +1,4 @@
-package 자료구조;
+package 분리집합;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * BOJ_1043_G4_거짓말
  * @author mingggkeee
- *
+ * 분리집합
  */
 
 public class BOJ_1043 {
