@@ -11,9 +11,9 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 /**
- * BOJ_11779_G4_최소비용 구하기 2
+ * BOJ_11779_G3_최소비용 구하기 2
  * @author mingggkeee
- * 다익스트라
+ * 다익스트라, 스택
  */
 
 public class BOJ_11779 {
