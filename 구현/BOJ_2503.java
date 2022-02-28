@@ -9,6 +9,91 @@ import java.util.StringTokenizer;
  * 구현, 브루트포스, 순열
  */
 
+public class BOJ_2503{
+	
+	static int N;
+	static String inputs[];
+	static int strike[], ball[];
+	
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		
+		N = Integer.parseInt(br.readLine());
+		inputs = new String[N];
+		strike = new int[N];
+		ball = new int[N];
+		
+		for(int i=0; i<N; i++) {
+			st = new StringTokenizer(br.readLine());
+			inputs[i] = st.nextToken();
+			strike[i] = Integer.parseInt(st.nextToken());
+			ball[i] = Integer.parseInt(st.nextToken());
+		}
+		
+		int answer = 0;
+		
+		for(int i=1; i<=9; i++) {
+			for(int j=1; j<=9; j++) {
+				
+				if(i!=j) {
+					
+					for(int k=1; k<=9; k++) {
+						if(k != i && k != j) {
+							
+							boolean check = true;
+							for(int m = 0; m<N; m++) {
+								int s = 0;
+								int b = 0;
+								String temp = inputs[m];
+								if(temp.charAt(0)-'0' == i) {
+									s++;
+								}
+								if(temp.charAt(1)-'0' == j) {
+									s++;
+								}
+								if(temp.charAt(2)-'0' == k) {
+									s++;
+								}
+								
+								if(temp.charAt(0)-'0'==j || temp.charAt(0)-'0'==k) {
+									b++;
+								}
+								if(temp.charAt(1)-'0'==i || temp.charAt(1)-'0'==k) {
+									b++;
+								}
+								if(temp.charAt(2)-'0'==i || temp.charAt(2)-'0'==j) {
+									b++;
+								}
+								
+								if(strike[m] != s || ball[m] != b) {
+									check = false;
+									break;
+								}
+								
+							}
+							
+							if(check)
+								answer++;
+							
+						}
+					}
+					
+					
+				}
+				
+			}
+		}
+		
+		System.out.println(answer);
+		
+	}
+	
+	
+}
+
+
+/*
 public class BOJ_2503 {
 	
 	static int N;
@@ -102,3 +187,4 @@ public class BOJ_2503 {
 	}
 	
 }
+*/
