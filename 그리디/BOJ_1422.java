@@ -7,6 +7,12 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.StringTokenizer;
 
+/**
+ * BOJ_1422_P4_숫자의 신
+ * @author mingggkeee
+ * 그리디, 정렬
+ */
+
 public class BOJ_1422 {
 
     static int K,N;

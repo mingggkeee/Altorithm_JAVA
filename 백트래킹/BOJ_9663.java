@@ -2,6 +2,7 @@ package 백트래킹;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.io.IOException;
 /**
  * BOJ_9663_G5_N-Queen
@@ -28,6 +29,7 @@ public class BOJ_9663 {
 	public static void nQueen(int depth) {
 		// 모든 원소를 다 채운 상태면 count 증가 및 return 
 		if (depth == N) {
+			System.out.println(Arrays.toString(arr));
 			count++;
 			return;
 		}
