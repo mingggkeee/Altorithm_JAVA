@@ -1,20 +1,23 @@
-package 미분류;
+package 구현;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class Main {
+/**
+ * BOJ_4344_B1_평균은 넘겠지
+ * @author mingggkeee
+ * 구현
+ */
+
+public class BOJ_4344 {
 	
 	static int[] nums;
 	
 	public static void main(String[] args) throws IOException{
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		int T = Integer.parseInt(br.readLine());
 		
@@ -43,8 +46,6 @@ public class Main {
 			
 		}
 		
-		bw.flush();
-		bw.close();
 
 	}
 	
