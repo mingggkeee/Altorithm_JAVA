@@ -89,7 +89,6 @@ public class BOJ_14889 {
 			
 		}
 		
-		
 		return Math.abs(sum1-sum2);
 		
 	}
