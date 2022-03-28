@@ -32,7 +32,6 @@ public class BOJ_17140 {
 			if(R>=C) {
 				int max = 0; 
 				for(int i = 0; i<R; i++) {
-					int[] temp = new int[100];
 					int[] count = new int[101];
 					for( int j = 0; j<C;j++) {
 						count[map[i][j]]++;
