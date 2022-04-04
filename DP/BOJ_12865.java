@@ -1,9 +1,6 @@
 package DP;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 /**
  * BOJ_12865_G5_평범한 배낭
@@ -13,54 +10,43 @@ import java.util.StringTokenizer;
 
 public class BOJ_12865 {
 	
-	static int N, K;
-	static int[] W, V;
-	static int[][] dp;
-	static int answer;
-	
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) {
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int W = sc.nextInt();
 		
-		N = Integer.parseInt(st.nextToken());
-		K = Integer.parseInt(st.nextToken());
+		int[] weights = new int[N+1];
+		int[] profits = new int[N+1];
 		
-		// 무게, 밸류
-		W = new int[N+1];
-		V = new int[N+1];
+		int[][] dp = new int[N+1][W+1];
 		
-		dp = new int[N+1][K+1];
-		
-		for(int i=0; i<N; i++) {
-			st = new StringTokenizer(br.readLine());
-			W[i] = Integer.parseInt(st.nextToken());
-			V[i] = Integer.parseInt(st.nextToken());
-		}
-		
-		knapsack();
-		
-		System.out.println(answer);
-		
-		
-	}
-	
-	static void knapsack() {
 		for(int i=1; i<=N; i++) {
-			for(int j=1; j<=K; j++) {
-				if(W[i] > j) {
-					dp[i][j] = dp[i-1][j];
-				}
-				else {
-					dp[i][j] = Math.max(dp[i-1][j - W[i]] + V[i], dp[i-1][j]);
-				}
-			}
+			weights[i] = sc.nextInt();
+			profits[i] = sc.nextInt();
 		}
 		
-		answer = dp[N][K];
+		int itemWeight = 0, itemBenefit= 0;
+		
+		for(int item=1; item<=N; item++) {
+			itemWeight = weights[item];
+			itemBenefit = profits[item];
+			
+			for(int weight=1; weight<=W; weight++) {
+				
+				if(itemWeight <= weight) {
+					dp[item][weight] = Math.max(dp[item-1][weight], itemBenefit+dp[item-1][weight-itemWeight]);
+				} else {
+					dp[item][weight] = dp[item-1][weight];
+				}
+				
+			}
+			
+		}
+		
+		System.out.println(dp[N][W]);
+		sc.close();
 		
 	}
-	
-
 
 }
