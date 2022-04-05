@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 /**
  * SWEA_3307_D3_최장 증가 부분 수열
  * @author mingggkeee
- *
+ * LIS
  */
 
 public class SWEA_3307 {
