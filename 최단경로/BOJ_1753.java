@@ -6,6 +6,11 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
+/**
+ * BOJ_1753_G5_최단경로
+ * @author mingggkeee
+ * 다익스트라
+ */
 public class BOJ_1753 {
 	
 	static int V,E,start;

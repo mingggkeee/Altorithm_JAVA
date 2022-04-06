@@ -1,4 +1,4 @@
-package MST;
+package 그래프;
 
 import java.io.*;
 import java.util.Arrays;
