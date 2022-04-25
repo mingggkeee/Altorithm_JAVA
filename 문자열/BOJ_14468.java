@@ -1,0 +1,39 @@
+package 문자열;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/**
+ * BOJ_14468_S5_소가 길을 건너간 이유 2
+ * @Author mingggkeee
+ * @Date 2022. 4. 23.
+ * @Category : 문자열
+ */
+
+public class BOJ_14468 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder();
+	static StringTokenizer st;
+	public static void main(String[] args) throws IOException {
+		String str = br.readLine();
+		
+		int pos1[] = new int[26];
+		int pos2[] = new int[26];
+		int cnt = 0;
+		for(int i = 0; i < 52; i++) {
+			int idx = str.charAt(i)-'A';
+			if(pos1[idx] == 0) pos1[idx] = i+1;
+			else pos2[idx] = i+1;
+		}
+		
+		for(int i = 0; i < 26; i++) {
+			for(int j = 0; j < 26; j++) {
+				if(pos1[i] < pos1[j] && pos1[j] < pos2[i] && pos2[i] < pos2[j])cnt++;
+			}
+		}
+		
+		System.out.println(cnt);
+	}
+}
