@@ -3,7 +3,7 @@ package DP;
 import java.util.Scanner;
 
 /**
- * BOJ_1912_S3_연속 합
+ * BOJ_1912_S2_연속 합
  * @Author mingggkeee
  * @Date 2022. 4. 26.
  * @Category : DP
