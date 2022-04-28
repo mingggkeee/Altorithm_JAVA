@@ -1,0 +1,56 @@
+package 알고리즘frame;
+
+import java.io.*;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+public class DijkstraTest1 {
+	
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int V = Integer.parseInt(br.readLine());
+		
+		int[][] adjMatrix = new int[V][V];
+		int start = 0;	// 출발 정점
+		
+		StringTokenizer st;
+		for(int r=0; r<V; r++) {
+			st = new StringTokenizer(br.readLine());
+			for(int c=0; c<V; c++) {
+				adjMatrix[r][c] = Integer.parseInt(st.nextToken());
+			}
+		}
+		
+		int[] distance = new int[V];			// 출발지에서 자신으로 오는 최소비용
+		boolean[] isVisited = new boolean[V];	// 최소비용 확정여부
+		
+		Arrays.fill(distance, Integer.MAX_VALUE);
+		distance[start] = 0;	// 시작점 0으로
+		
+		for(int i=0; i<V; i++) {
+			// 단계1 : 최소비용이 확정되지 않은 정점중 최소비용의 정점 선택
+			int min=Integer.MAX_VALUE;
+			int current = 0;
+			
+			for(int j=0; j<V; j++) {
+				if(!isVisited[j] && min > distance[j]) {
+					min = distance[j];
+					current = j;
+				}
+			}
+			
+			isVisited[current] = true;
+			
+			// 단계2 : 선택된 정점을 경유지로 하여 아직 최소비용이 확정되지 않은 다른정점의 최소비용을 고려
+			for(int j=0; j<V; j++) {
+				if(!isVisited[j] && adjMatrix[current][j] != 0 && distance[j] > distance[current] + adjMatrix[current][j]) {
+					distance[j] = distance[current] + adjMatrix[current][j];
+				}
+			}
+			
+		}
+		
+		System.out.println(Arrays.toString(distance));
+		
+	}
+}
