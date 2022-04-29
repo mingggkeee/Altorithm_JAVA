@@ -10,12 +10,13 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 /**
- * BOJ_17142_G4_연구소3
+ * BOJ_17141_G4_연구소 2
  * @Author mingggkeee
- * @Date 2022. 4. 27.
- * @Category : BFS, 조합
+ * @Date 2022. 4. 29.
+ * @Category : BFS
  */
-public class BOJ_17142 {
+
+public class BOJ_17141 {
 	
 	static class Location{
 		int r;
@@ -29,30 +30,31 @@ public class BOJ_17142 {
 		}
 	}
 	
-	static int N, M;
+	static int N, M, zeroCnt;
 	static int[][] map;
-	static int[][] dir = {{1,0},{-1,0},{0,1},{0,-1}};
+	static List<Location> list;
 	static Location[] selected;
-	static List<Location> viruses;
-	static int zeroCnt;
+	static boolean[][] isVisited;
+	static int[][] dir = {{1,0},{-1,0},{0,1},{0,-1}};
 	static int answer = Integer.MAX_VALUE;
-
+	
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		N = Integer.parseInt(st.nextToken());	// N * N의 맵
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		
+		list = new ArrayList<>();
 		map = new int[N][N];
-		M = Integer.parseInt(st.nextToken());	// 바이러스의 개수
 		selected = new Location[M];
 		
-		viruses = new ArrayList<>();
 		for(int r=0; r<N; r++) {
 			st = new StringTokenizer(br.readLine());
 			for(int c=0; c<N; c++) {
 				map[r][c] = Integer.parseInt(st.nextToken());
 				if(map[r][c] == 2) {
-					viruses.add(new Location(r, c, 0));
+					list.add(new Location(r, c, 0));
 				}
 				if(map[r][c] == 0) {
 					zeroCnt++;
@@ -62,46 +64,43 @@ public class BOJ_17142 {
 		
 		combi(0, 0);
 		
-		
 		if(answer == Integer.MAX_VALUE) {
-			answer = -1;
+			System.out.println(-1);
+		} else {
+			System.out.println(answer);
 		}
-		System.out.println(answer);
+		
 	}
 	
 	static void combi(int start, int cnt) {
-		
 		if(cnt == M) {
 			bfs();
 			return;
 		}
 		
-		for(int i=start; i<viruses.size(); i++) {
-			selected[cnt] = viruses.get(i);
+		for(int i=start; i<list.size(); i++) {
+			
+			selected[cnt] = list.get(i);
 			combi(i+1, cnt+1);
 		}
 		
 	}
 	
 	static void bfs() {
-		boolean[][] isVisited = new boolean[N][N];
 		
+		isVisited = new boolean[N][N];
 		Queue<Location> queue = new LinkedList<>();
 		for(int i=0; i<M; i++) {
-			Location input = selected[i];
-			queue.offer(input);
-			isVisited[input.r][input.c] = true; 
+			Location temp = selected[i];
+			isVisited[temp.r][temp.c] = true;
+			queue.offer(temp);
 		}
-		
-		int compare = 0;
 		int count = 0;
+		int curTime = 0;
 		
 		while(!queue.isEmpty()) {
-			Location now = queue.poll();
 			
-			if(now.time >= answer) {
-				break;
-			}
+			Location now = queue.poll();
 			
 			for(int i=0; i<4; i++) {
 				int nr = now.r + dir[i][0];
@@ -109,20 +108,22 @@ public class BOJ_17142 {
 				
 				if(nr>=0 && nc>=0 && nr<N && nc<N && map[nr][nc] != 1 && !isVisited[nr][nc]) {
 					
-					isVisited[nr][nc] = true;
 					if(map[nr][nc] == 0) {
 						count++;
-						compare = now.time+1;
-					} 
+					}
+					
+					isVisited[nr][nc] = true;
 					queue.offer(new Location(nr, nc, now.time+1));
+					curTime = now.time+1;
 					
 				}
-			}
 				
+			}
+			
 		}
-
+		
 		if(count == zeroCnt) {
-			answer = Math.min(compare, answer);
+			answer = Math.min(answer, curTime);
 		}
 		
 	}
