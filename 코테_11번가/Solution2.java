@@ -4,22 +4,11 @@ public class Solution2 {
 	
 	public static int solution(int[] A) {
 		int count = 0;
+		int maxLight = -1;
 		
-		boolean[] isVisited = new boolean[A.length+1];
-		
-		for(int num : A) {
-			
-			isVisited[num] = true;
-			boolean check = true;
-			
-			for(int i=1; i<=num; i++) {
-				if(!isVisited[i]) {
-					check = false;
-					break;
-				}
-			}
-			
-			if(check) {
+		for(int i=0; i<A.length; i++) {
+			maxLight = Integer.max(maxLight, A[i]);
+			if(i+1 == maxLight) {
 				count++;
 			}
 		}
@@ -29,7 +18,7 @@ public class Solution2 {
 	
 	public static void main(String[] args) {
 		
-		int[] test = {5, 2, 1, 3, 4, 10, 8, 7, 9, 6};
+		int[] test = {5,1,2,3,4};
 		
 		System.out.println(solution(test));
 		
