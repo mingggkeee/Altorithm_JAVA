@@ -1,4 +1,4 @@
-package 맵;
+package 해시맵;
 
 import java.util.*;
 import java.io.*;
