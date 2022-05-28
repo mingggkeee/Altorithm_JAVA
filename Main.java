@@ -6,23 +6,32 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int L = sc.nextInt();
-		int P = sc.nextInt();
+		int[] hamb = new int[3];
+		int[] drink = new int[2];
 		
-		int lp = L * P;
-		
-		int[] per = new int[5];
-		
-		for(int i=0; i<5; i++) {
-			per[i] = sc.nextInt();
-			per[i] = per[i] - lp;
+		for(int i=0; i<3; i++) {
+			hamb[i] = sc.nextInt();
 		}
 		
-		for(int i : per) {
-			System.out.print(i+" ");
+		for(int i=0; i<2; i++) {
+			drink[i] = sc.nextInt();
 		}
+		
+		int min = Integer.MAX_VALUE;
+		
+		for(int i=0; i<3; i++) {
+			for(int j=0; j<2; j++) {
+				int comp = hamb[i] + drink[j];
+				if(comp < min) {
+					min = comp;
+				}
+			}
+		}
+		
+		System.out.println(min-50);
 		
 		sc.close();
+
 	}
 		
 
