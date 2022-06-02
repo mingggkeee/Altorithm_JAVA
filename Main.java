@@ -6,13 +6,22 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		long sum = 0;
+		int s1 = 0;
+		int s2 = 0;
 		
-		for(int i=0; i<5; i++) {
-			sum += sc.nextLong();
+		for(int i=0; i<4; i++) {
+			s1 += sc.nextInt();
 		}
 		
-		System.out.println(sum);
+		for(int i=0; i<4; i++) {
+			s2 += sc.nextInt();
+		}
+		
+		if(s1>=s2) {
+			System.out.println(s1);
+		} else {
+			System.out.println(s2);
+		}
 		
 		sc.close();
 
